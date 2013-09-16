@@ -16,9 +16,9 @@ tags:
 
 While working on a Ruby on Rails project, I stumbled across an interesting thing.
 
-    
-    = render partial: 'product_line', collection: product_lines_with_brand(@result, brand)
-
+{% highlight ruby %}
+= render partial: 'product_line', collection: product_lines_with_brand(@result, brand)
+{% endhighlight %}
 
 In My view I was rendering the partial above. For styling reasons I required that after ever second time the partial is called, I should be adding a clearing div.
 
@@ -27,5 +27,7 @@ After spending some time to try to find a good solution, I stumbled upon somethi
 So all I had to do was append the following snippet of code at the very end of the partial
 
     
-     - if product_line_counter.odd?
-       .clear
+{% highlight haml %}
+- if product_line_counter.odd?
+  .clear
+{% endhighlight %}
