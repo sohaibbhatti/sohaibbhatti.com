@@ -1,0 +1,22 @@
+---
+author: sohaibbbhatti
+comments: true
+date: 2012-07-01 19:20:10+00:00
+layout: post
+slug: janus-vim
+title: Janus + Vim
+wordpress_id: 100
+tags:
+- Janus
+- Vim
+---
+
+Over the past one year I've been trying to use Vim on and off as my primary editor of choice. However, whenever I do, I note that my productivity declines tremendously as I spend most of my time struggling with Vim and always revert to good old Sublime Text.
+
+Recently a colleague of mine suggested that I give [Janus](https://github.com/carlhuda/janus/) a try. After much skepticism I decided to give it a shot and I must say its pretty awesome!
+
+[CtrlP](https://github.com/kien/ctrlp.vim) brings the awesomeness of the fuzzy finder that I so love and adore in Sublime Text. [ZoomWin](http://github.com/vim-scripts/ZoomWin) makes shuffling through tabs painless and extremely easily.
+
+However the star of the show is [EasyMotion](https://github.com/Lokaltog/vim-easymotion). The way how it enables its users to jump to any specific location in the file is extremely intuitive. <leader><leader>w annotates each word in viewport of the file with a specific character. Once the corresponding character of the file is entered, the caret jumps to that particular word.
+
+Janus is definitely a must try! The plugins it adds to vim for development are just awesome.

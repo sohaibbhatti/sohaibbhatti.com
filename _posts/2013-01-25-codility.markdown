@@ -1,0 +1,42 @@
+---
+author: sohaibbbhatti
+comments: true
+date: 2013-01-25 11:31:26+00:00
+layout: post
+slug: codility
+title: Codility
+wordpress_id: 189
+categories:
+- General
+tags:
+- Codility
+- Interview
+- Test
+---
+
+I just gave a test on [Codility](http://codility.com/) as part of an interview process for landing a job that I've been eyeballing for quite a while now. This has left me with mixed feelings about the nature of the test.
+
+I really love the idea of  giving such tests as part of an interview process. This way, I believe, quite a lot of time is saved for the interviewer in screening applicants out. However, I fear that such tests might not be completely accurate.
+
+In my case, there were 3 questions that I had to write the code for in a time span of 45 minutes. Since, I'm fairly comfortable with the Ruby language I decided to attempt my questions using Ruby. Immediately the feeling that the way how I was writing my code, was not proving beneficial assessing the necessary skills(Complexities were stated, where as Ruby is an extremely verbose language that provides a whole suite of methods). I immediately shifted to Java. 5 Minutes later I realized if I continue any further I  wouldn't be able to complete the test which led me to revert back to Ruby and frantically attempt to solve all the questions. As an afterthought I should have read up a bit about codility and how they assess code before giving the test.
+
+Also my advice to all people giving the test
+
+
+
+	
+  1. Switch off your phone!
+
+	
+  2. If you happen to live in a third world country plagued by load shedding, know the scheduling of black outs. It isn't too big of a problem, but in my case whenever electricity goes or comes back my router reboots. This happened to me twice shedding away around 4 minutes.
+
+	
+  3. Let the rest of your family know beforehand that you're about to give a test and should not be disturbed. This is the point that I'm cursing at myself for not following mainly because of laziness. Today also happened to be a public holiday which results in a greater probability of guests visiting. Exactly, what happened to me as a result of which I lost my train of thought in the middle of the test.
+
+	
+  4. Take the [demo test](http://codility.com/demo/take-sample-test/). Its a good way of getting used to the interface as well as developing an understanding to the nature and format of the problems you'll be solving.
+
+	
+  5. A cliche but, Time Management! Do not waste too much time on one particular problem. Solve the rest and come back to it.
+
+
