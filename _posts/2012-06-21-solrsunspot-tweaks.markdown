@@ -20,8 +20,10 @@ I recently had to improve the searching functionality on an app that I was worki
 The basic configuration only matches exact searches without any regard for pluralization, so for instance if the word "dogs" was being queried, "dog" wouldn't have been a match. Also partial matches i.e  After doing quite a lot of digging around I found the following filters which proved to be really helpful.
 
     
-    <filter class="solr.NGramFilterFactory" minGramSize="4" maxGramSize="15"/>
-    <filter class="solr.PorterStemFilterFactory"/>
+{% highlight xml %}
+<filter class="solr.NGramFilterFactory" minGramSize="4" maxGramSize="15"/>
+<filter class="solr.PorterStemFilterFactory"/>
+{% endhighlight %}
 
 
 The initial filter, breaks any given word to be indexed, into different tokens. In the example above the minimum size of each token would be 4 and the maximum, 15. So for instance,  if there exists a word "monkey", the word would be tokenized yielding "monk", "monke", monkey" and "monkeys". All mapping to the original word monkeys.

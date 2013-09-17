@@ -14,34 +14,38 @@ tags:
 
 Lets have a look at the code below. Any idea to what the output will be?
 
+{% highlight ruby %}
     
-    module Foo
-      def print_salutations 
-        hello
-      end 
-      def hello
-        p 'hello from Foo'
-      end
-    end
-    
-    module Bar
-      def hello
-        p 'hello from Bar'
-      end
-    end
-    
-    class MyClass
-      include Foo
-      include Bar
-    end
-    
-    MyClass.new.print_salutations
+module Foo
+  def print_salutations 
+    hello
+  end 
+  def hello
+    p 'hello from Foo'
+  end
+end
+
+module Bar
+  def hello
+    p 'hello from Bar'
+  end
+end
+
+class MyClass
+  include Foo
+  include Bar
+end
+
+MyClass.new.print_salutations
+{% endhighlight %}
 
 
 Whenever a module is included into a class, Ruby converts that module into an anonymous Class and adds it as a parent to the class it is being included in. If we traverse through all the parents of a Class, we'll be ending up at the BasicObject class. (Ruby 1.9+)
 
     
-    <code> ruby-1.9.2-p290 :021 > MyClass.ancestors => [MyClass, Bar, Foo, Object, Kernel, BasicObject]</code>
+{% highlight ruby %}
+ruby-1.9.2-p290 :021 > MyClass.ancestors => [MyClass, Bar, Foo, Object, Kernel, BasicObject]
+{% endhighlight %}
 
 
 The illustration below depicts the ancestor chain for MyClass described above. Now comes the fun part:
