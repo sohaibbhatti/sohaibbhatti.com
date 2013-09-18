@@ -21,29 +21,32 @@ The fundamental difference between the dup and clone method provided by ruby is 
 
 Both are shallow copies.
 
+{% highlight ruby %}
+class Testing
+  def hello
+    p 'calling from class'
+  end
+end
     
-    class Testing
-      def hello
-        p 'calling from class'
-      end
-    end
-    
-    foo = Testing.new
-    def foo.hello
-      p 'calling from singleton'
-    end
-    
-    s.clone.hello # => 'calling from singleton'
-    s.dup.hello  # => 'calling from class'
-    
-    foo = {:testing => {:cool => 'swell'}}
-    foo_clone = foo.clone
-    foo_clone[:testing][:cool] = 'not cool'
-    #foo[:testing][:cool] Will now be 'not cool' as well
+foo = Testing.new
+def foo.hello
+  p 'calling from singleton'
+end
+
+s.clone.hello # => 'calling from singleton'
+s.dup.hello  # => 'calling from class'
+
+foo = {:testing => {:cool => 'swell'}}
+foo_clone = foo.clone
+foo_clone[:testing][:cool] = 'not cool'
+
+#foo[:testing][:cool] Will now be 'not cool' as well
+{% endhighlight %}
 
 
 This leads us to the question of how to perform a deep copy. The Marshal Module is used for this!
 
-    
-    foo_dump = Marshal.dump(foo)
-    foo_clone = Marshal.load(foo_dump)
+{% highlight ruby %}
+foo_dump = Marshal.dump(foo)
+foo_clone = Marshal.load(foo_dump)
+{% endhighlight %}
