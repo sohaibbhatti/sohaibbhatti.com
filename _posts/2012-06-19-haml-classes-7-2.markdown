@@ -17,20 +17,22 @@ tags:
 
 Since the day I learned HAML, I developed this really bad habit. Whenever I've to add a div with a single class I would use the proper notation.
 
-    
-    .brandImageLogo
-
+{% highlight haml %}
+  .brandImageLogo
+{% endhighlight %}
 
 However, as soon as multiple classes arise, I'd use an awkward notation.
 
-    
-    div{class: 'brandImageLogo floatLeft center'}
+{% highlight haml %}
+  div{class: 'brandImageLogo floatLeft center'}
+{% endhighlight %}
 
 
 However I trudged upon the 'proper way' of how to do this.
 
-    
-    .brandImageLogo.floatLeft.center
+{% highlight haml %}
+  .brandImageLogo.floatLeft.center
+{% endhighlight %}
 
 
 Just proves how important it is to keep reading up on things you believe you're comfortable with!
