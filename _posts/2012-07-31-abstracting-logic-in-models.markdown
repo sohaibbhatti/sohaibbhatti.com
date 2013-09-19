@@ -23,23 +23,27 @@ I decided it would be best to abstract chunks of related logic into separate m
 So, for example in the class User.rb, modules are being included in the following manner.
 
     
-    #=========================================================
-    #Methods related to tribune/cs preferences located here
-    include User::TribuneMethods
-    ...
-    #======================================
+{% highlight ruby %}
+#=========================================================
+#Methods related to tribune/cs preferences located here
+include User::TribuneMethods
+...
+#======================================
+{% endhighlight %}
 
 
 The modules being referred to currently exist In the lib folder (realized that it would be best if this should remain in the app/models)
 
     
-      module User
-        module TribuneMethods
-          extend ActiveSupport::Concern
-    
-          ...
-        end
-      end
+{% highlight ruby %}
+module User
+  module TribuneMethods
+    extend ActiveSupport::Concern
+
+    ...
+  end
+end
+{% endhighlight %}
 
 
 I decided that it would be best to leave all the validations and associations in the respective models, as I think its pretty useful to have a look at them in the model itself.

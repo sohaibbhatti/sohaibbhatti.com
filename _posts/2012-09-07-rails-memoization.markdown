@@ -19,14 +19,15 @@ Ever written a method that performs expensive computations? For example matching
 
 If the same method is being reused multiple times in the same code base, memoization might be able save your computer or server quite a few clock cycles. The concept is fairly simple but is often overlooked.
 
-    
-     def answer_to_ultimate_question_of_life
-       #perform some insanely computationally expensive task here
-       #returns 42
-     end
-    
-    puts "#{answer_to_ultimate_question_of_life}"
-    puts "#{answer_to_ultimate_question_of_life} is not to be mistaken with the meaning of life!"
+{% highlight ruby %}
+ def answer_to_ultimate_question_of_life
+   #perform some insanely computationally expensive task here
+   #returns 42
+ end
+
+puts "#{answer_to_ultimate_question_of_life}"
+puts "#{answer_to_ultimate_question_of_life} is not to be mistaken with the meaning of life!"
+{% endhighlight %}
 
 
 In the example above we can see that the method is being called two which, as you can guess, will perform all the necessary computations two times.
@@ -34,23 +35,26 @@ In the example above we can see that the method is being called two which, as yo
 One way to solve this issue is using assigning the result of this method to a variable and then invoking the variable twice. If it is being used in different methods of a particular class, instead of using a variable an instance variable can be used. (@ans)
 
     
-      ans ||= answer_to_ultimate_question_of_life
-      puts "#{ans}"
-      puts "#{ans} is not to be mistaken with the meaning of life!"
+{% highlight ruby %}
+ans ||= answer_to_ultimate_question_of_life
+puts "#{ans}"
+puts "#{ans} is not to be mistaken with the meaning of life!"
+{% endhighlight %}
 
 
 Rails however provides a really cool alternative to this issue; the Memoizable module. It can be found in the ActiveSupport gem and using it is really easy and in my opinion looks really clean.
 
-    
-    class SuperComputer
-      extend ActiveSupport::Memoizable
-    
-      def answer_to_ultimate_question_of_life
-       #perform some insanely computationally expensive task here
-       #returns 42
-      end
-      memoize :answer_to_ultimate_question_of_life
+{% highlight ruby %}
+class SuperComputer
+  extend ActiveSupport::Memoizable
 
+  def answer_to_ultimate_question_of_life
+    #perform some insanely computationally expensive task here
+    #returns 42
+  end
+  memoize :answer_to_ultimate_question_of_life
+end
+{% endhighlight %}
 
 Voila! You are now set to abuse this method as many times as you want to in a particular request. It even works on methods that expects arguments and caches the result based on the input arguments being passed.
 
@@ -58,9 +62,10 @@ Voila! You are now set to abuse this method as many times as you want to in a pa
 
 Look at the crude example below. Its output will always change. Caching it will render the output of the method to always be incorrect except for the first time.
 
-    
-      class HitchHiker
-        def guide_to_galaxy(obj)
-          DateTime.now
-        end
-      end
+{% highlight ruby %}    
+class HitchHiker
+  def guide_to_galaxy(obj)
+    DateTime.now
+  end
+end
+{% endhighlight %}
