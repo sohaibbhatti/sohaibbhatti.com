@@ -160,7 +160,6 @@ ul.posts span {
 }
 
 /*Horizontal scroll for overflowing code blocks*/
-.post .highlight { 
-  white-space: pre-wrap;
-  overflow: auto;
+.post .highlight {
+  overflow-wrap: break-word;
 }
