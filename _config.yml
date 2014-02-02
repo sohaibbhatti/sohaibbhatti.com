@@ -1,3 +1,11 @@
 name: Sohaib Bhatti
 markdown: redcarpet
 pygments: true
+github: www.github.com/sohaibbhatti
+about: I am an independent developer focusing on Ruby and Javascript. Recently I've been dabbing into Go. My domains of interest include Computer Vision and Big Data.
+urls:
+    - text: github
+      url: https://github.com/sohaibbhatti
+    - text: email
+      url: mailto:sohaibbbhatti@gmail.com
+
